@@ -3,13 +3,10 @@ import 'package:test/test.dart';
 import 'main.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 47);
-  });
-  test('calculate', () {
+  test('Multi Counter', () {
     expect(multiplicative(39), 3);
   });
-  test('calculate', () {
+  test('Mexican Wave', () {
     expect (wave("edabit"), (["Edabit", "eDabit", "edAbit", "edaBit", "edabIt", "edabiT"]));
   });
 }
