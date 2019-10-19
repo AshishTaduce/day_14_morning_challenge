@@ -1,14 +1,27 @@
+
+
 // Challenge 1
 // Write test cases for the next two challenges and let them fail
 
 // Challenge 2
 // Create a function that takes a number and returns its multiplicative persistence,
 // which is the number of times you must multiply the digits in num until you reach a single digit.
-// multiplicative(39) ➞ 3
+//  ➞ 3
 /// Because 3 * 9 = 27, 2 * 7 = 14, 1 * 4 = 4 and 4 has only one digit.
 int multiplicative(int number) {
-  return null;
+  int count = 0;
+  int temp = 1;
+  for (int i = 0; number.toString().length != 1; i++) {
+    for (int x = 0; x < number.toString().length; x++) {
+      temp = temp * int.parse(number.toString()[x]);
+    }
+    number = temp;
+    temp = 1;
+    count++;
+  }
+  return count;
 }
+
 
 // Challenge 3
 // Mexican Wave Simulator
@@ -23,7 +36,22 @@ int multiplicative(int number) {
 
 //  wave(" ") ➞ []
 List<String> wave(String word) {
-  return null;
+  int length = word.length;
+  List<String> waveList = [];
+  for (int i = 0; i < length; i++) {
+    if (word[i] != ' ') {
+      String newWord = word.substring(0, i) +
+          word[i].toUpperCase() +
+          word.substring(i + 1, length);
+      waveList.add(newWord);
+    }
+  }
+
+  return waveList;
 }
 
-main() {}
+main() {
+  //print(multiplicative(39));
+  print(wave("edabit"));
+  print(multiplicative(39));
+}
